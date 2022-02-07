@@ -1,0 +1,100 @@
+package poo2;
+
+/**
+ *
+ * @author Omar
+ */
+public class personaje {
+   private String nombre = "Computadora";
+    private int salud =500;
+    private int ataque =50;
+    private int defensa =35;
+    private double ta =0.7;
+    
+    public personaje ()
+    {
+     String nombre = "Computadora";
+     int salud =500;
+     int ataque =50;
+     int defensa =35;
+     double ta =0.7;
+    }
+    
+    public String getNombre ()
+    {
+        return this.nombre;
+    }
+    
+    public void setNombre (String _nombre)
+    {
+        this.nombre=_nombre;
+    }
+    
+    public int getSalud()
+    {
+        return this.salud;
+    }
+    
+    public void setSalud(int _salud)
+    {
+        this.salud =_salud;
+    }
+    
+    public int getAtaque()
+    {
+        return this.ataque;
+    }
+    
+    public void setAtaque()
+    {
+        this.ataque = ataque;
+    }
+    
+    public int getDefensa()
+    {
+        return this.defensa;
+    }
+    
+    public void setDefensa(int _defensa)
+    {
+        this.defensa =_defensa;
+    }
+    
+    public double getTa()
+    {
+        return this.ta;
+    }
+    
+    public void setTa(double _ta)
+    {
+        this.ta= _ta;
+    }
+    
+    public void Atacado(int _ataque)
+    {
+        int daño = _ataque-this.defensa;
+        int vidaRestante=this.salud;
+        if(daño>0){
+            vidaRestante-=daño;
+            System.out.println(this.nombre+"ha recibido un golpe... su vida bajo "+daño+" puntos");
+        }else{
+            System.out.println(this.nombre+" recibio un mini golpe... muestrale quien manda");
+        }
+        this.salud = vidaRestante;
+        System.out.println(this.nombre+"le quedan"+this.salud+" puntos de vida restante");
+    }
+    
+    public void Esquivar ()
+    {
+        System.out.println(this.nombre+"El golpe ha sido esquivado con exito...");
+    }
+    
+    //Este metodo devuelve verdadero si el personaje sigue con vida
+    public boolean Estado()
+    {
+        boolean vida = true;
+        if(this.salud<=0)vida=false;
+        return vida;
+    }
+}  
+
